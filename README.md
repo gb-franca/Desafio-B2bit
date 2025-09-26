@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# 🔑 Desafio de Implementação: Tela de Login e Autenticação (B2BIT)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto implementa o fluxo completo de autenticação (Login, Persistência de Sessão e Rota Protegida) conforme especificado no desafio técnico.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Status do Projeto e Acesso
 
-## React Compiler
+| Detalhe | Valor |
+| :--- | :--- |
+| **URL da Aplicação (Deploy):** | **https://desafio-b2bit-beige.vercel.app/** |
+| **Tecnologias Utilizadas:** | React.js, TypeScript, Vite, React Router DOM, Formik & Yup |
+| **Ambiente de Teste:** | Homologação (API de Terceiros) |
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Credenciais de Teste
 
-## Expanding the ESLint configuration
+Para acessar a área restrita, utilize as seguintes credenciais válidas:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Campo | Valor |
+| :--- | :--- |
+| **E-mail:** | `cliente@youdrive.com` |
+| **Senha:** | `password` |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Funcionalidades Implementadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+O projeto atende a todos os requisitos funcionais solicitados, incluindo:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Login (Sign In):** Integração via `fetch` com a API de homologação para autenticação.
+2.  **Persistência de Sessão:** Uso de **Context API** e **`localStorage`** para manter o usuário logado entre sessões e recarregamentos de página.
+3.  **Roteamento Protegido:** A página `/profile` é protegida, redirecionando o usuário para `/` (Login) se não houver um token válido.
+4.  **Busca de Perfil:** Requisição GET para `/auth/profile/` utilizando o **Token JWT (Bearer)** no cabeçalho.
+5.  **Logout:** Botão "Sair" que remove o token e encerra a sessão.
+6.  **UX:** Validação de formulário robusta com **Formik** e **Yup**.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Como Executar o Projeto Localmente
+
+Siga estas instruções para clonar e rodar a aplicação na sua máquina:
+
+1.  **Clone o Repositório:**
+    ```bash
+    git clone [https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories](https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+    cd desafio-b2bit
+    ```
+
+2.  **Instale as Dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Inicie o Servidor de Desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará disponível em `http://localhost:5173/` (ou outra porta indicada).
+
+    ## 👤 Desenvolvedor
+
+Este projeto foi desenvolvido por:
+
+* **Gabriel França** (GitHub: `gb-franca`)
