@@ -1,0 +1,41 @@
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+}
+
+.profile-info-group {
+    margin-bottom: 20px;
+}
+
+.profile-info-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.info-display {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f7f7f7; 
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #555;
+}
